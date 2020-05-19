@@ -6,7 +6,8 @@ body{
   font-size: 30px;
   height: 1100px;
   /* 背景についてはJSで上書きするので仮設定 */
-  background: url(../img/day6.jpg) no-repeat center center;
+  /* background: url(../img/6.jpg) no-repeat center center;
+  background: url(../img/2.jpg) no-repeat center center; */
   background-size: cover;
 }
 

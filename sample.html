@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>一定時間ごとに背景画像を変える</title>
+  <script language="JavaScript">
+    i = 0;
+    url = "./img/";                //背景画像保存先
+    //配列を作成
+    img = new Array("day6.jpg", "test.jpg");
+
+    function change() {                //背景画像を変える
+      i++;
+      if (i >= img.length) {
+        i = 0;
+      }
+      document.body.background = url + img[i];
+    }
+
+    function tm() {                    //タイマーをセット
+      //document.body.background = url + img[i];
+      //document.body.background = "./img/day6.jpg"; //初期画像
+      tm = setInterval("change()", 1000);
+    }
+    //-->
+  </script>
+</head>
+
+<body onload="tm()">
+  5秒ごとに背景画像が変わります。<br>
+</body>
+
+</html>
