@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="body" onload="bgsetter()">
+<body class="body">
 
   <div class="container">
     <p>
@@ -28,26 +28,14 @@
       <span id="week">The-day</span>
     </p>
     <p id="time">00:00:00</p>
-    <a href="javascript:changeBG('img/6.jpg')"> <img src="img/6.jpg" width="32" height="32"></a>
   </div>
 
   <script>
 
-    /**
-     * 曜日毎に背景画像を変える ※未実装
-    */
-    function bgsetter() {
-      //TODO 曜日で画像変える
-      // document.body.background = "./img/test.jpg"; //初期画像
-      // document.body.color = "black"; //
-      // $(".body").css("color", "#111");
-    }
-    function changeBG(wIMG) {
-      document.body.style.background = "url(" + wIMG + ") no-repeat center center";
-      document.body.style.backgroundSize = "cover"
-    }
+    //とりあえず初回ページ表示
+    updateTime()
 
-    updateTime()  //初回ページ表示用
+    //1秒ごとに表示更新
     timerid = setInterval(updateTime, 1000);
 
     /**
@@ -78,8 +66,29 @@
       var dayOfWeekStr = ["Sunday", "Monday", "火", "水", "木", "Fri.", "土"];	//
       var wDay = now.getDay()
       document.getElementById('week').innerHTML = dayOfWeekStr[wDay];
+
+      //曜日毎に背景画像を変える
+      //console.log('wDay=' + wDay)
+      switch (wDay) {
+        case 0: changeBG("img/00.jpg"); break;
+        case 1: changeBG("img/10.jpg"); break;
+        case 2: changeBG("img/20.jpg"); break;
+        case 3: changeBG("img/30.jpg"); break;
+        case 4: changeBG("img/40.jpg"); break;
+        case 5: changeBG("img/50.jpg"); break;
+        case 6: changeBG("img/60.jpg"); break;
+        default: console.log("invalid wDay.");
+      }
     }
 
+    /**
+     * 背景を変える関数（CSSのbackgroundを上書きする）
+     * @param 背景に適用したい画像
+    */
+    function changeBG(IMG) {
+      document.body.style.background = "url(" + IMG + ") no-repeat center center";
+      document.body.style.backgroundSize = "cover"
+    }
 
 
   </script>
