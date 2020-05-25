@@ -5,7 +5,7 @@ body{
   color: white;
   font-size: 30px;
   height: 1100px;
-  /* 背景についてはJSで上書きする。js動かない時用に仮設定 */
+  /* 背景はJSで上書きするので、ここはただの仮設定 */
   background: url(../img/99.jpg) no-repeat center center;
   background-size: cover;
 }
@@ -14,9 +14,10 @@ body{
 /* 文字入れてる四角い箱 */
 .container{
   margin: 500px auto;
-  border: white solid 4px;
   padding-top: 12px;
   width: 300px;
+  border: white solid 4px;
+  background-color: rgba(10,10,10,0.2);
 }
 
 
