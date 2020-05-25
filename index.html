@@ -64,7 +64,7 @@
       var now = new Date();
       document.getElementById('date').innerHTML = dateToStr24HPad0(now, 'MM/DD');
       document.getElementById('time').innerHTML = dateToStr24HPad0(now, 'hh:mm:ss');
-      var dayOfWeekStr = ["Sun.", "Monl", "Tue.", "Wed.", "Thu.", "Fri.", "Sat."];	//
+      var dayOfWeekStr = ["Sun.", "Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat."];
       var wDay = now.getDay()
       document.getElementById('week').innerHTML = dayOfWeekStr[wDay];
 
